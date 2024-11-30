@@ -71,6 +71,7 @@
                                     Le vivre-ensemble, la solidarité, le
                                     partage, la paix
                                 </p>
+                                <button class="btn-more" onclick="openModal('valeurs')">En savoir plus</button>
                             </div>
 
                             <div class="card">
@@ -80,57 +81,49 @@
                                     Unité, Intégrité, Don de soi
 
                                 </p>
+                                <button class="btn-more" onclick="openModal('vision')">En savoir plus</button>
 
                             </div>
                             <div class="card">
                                 <i class="fa-solid fa-layer-group"></i>
                                 <h2>OBJECTIFS</h2>
                                 <p>
-                                    Créer des salles de classe et des écoles, faciliter
-                                    l'accès à l'eau potable, encourager l'agriculture et les
-                                    coopératives villageoises, promouvoir les créateurs locaux
-                                    et les start-up, faciliter l'accès aux bourses d'études et aux stages, organiser des
-                                    conférences sur le changement climatique et le reboisement, promouvoir les pratiques
-                                    écologiques, et lutter contre l'insalubrité et l'incivisme.
+                                    Construire des écoles, améliorer l'accès à l'eau potable, soutenir l'agriculture, les start-ups et les créateurs locaux, promouvoir l'éducation et l'écologie, et sensibiliser au civisme.
                                 </p>
+                                <button class="btn-more" onclick="openModal('objectifs')">En savoir plus</button>
 
                             </div>
                             <div class="card">
                                 <i class="fa-solid fa-layer-group"></i>
                                 <h2>PROJECT</h2>
                                 <p>
-                                    Créer un lieu de rencontres et de formation en développement personnel. Établir un
-                                    centre de couture et un réseau de distribution pour la marque TPM, avec une partie
-                                    des bénéfices allant à la fondation GO PAGA. Installer un complexe audiovisuel pour
-                                    enregistrer de la musique, faire des vidéos et produire du contenu web et télévisé.
+                                    Créer un espace de formation en développement personnel, 
+                                    un centre de couture avec réseau de distribution pour TPM, 
+                                    et un complexe audiovisuel pour la production musicale et visuelle au profit de la fondation GO PAGA.
                                 </p>
+                                <button class="btn-more" onclick="openModal('project')">En savoir plus</button>
 
                             </div>
                             <div class="card">
                                 <i class="fa-solid fa-layer-group"></i>
                                 <h2>ACTION</h2>
                                 <p>
-                                    fourniture de dialyseurs à l’hôpital Sourou Sanou de Bobo au profit des malades
-                                    atteints d’insuffisance rénale. Coaching et copresentation d’émissions interactives
-                                    dénommées JE SLAM POUR MA PATRIE de 2013 à 2014 dont les thèmes retenus ont été :
-                                    civisme, patriotisme, intégrité diffusé en direct sur RTB télévision
-                                    nationale du Burkina
+                                    Fourniture de dialyseurs à l’hôpital Sourou Sanou pour les patients atteints d’insuffisance rénale, 
+                                    et co-animation de l’émission **JE SLAM POUR MA PATRIE** (2013-2014) 
+                                    sur le civisme et le patriotisme, diffusée sur la RTB nationale.
                                 </p>
+                                <button class="btn-more" onclick="openModal('action')">En savoir plus</button>
 
                             </div>
                             <div class="card">
                                 <i class="fa-solid fa-layer-group"></i>
                                 <h2>MISSION</h2>
                                 <p>
-                                    Offrir des opportunités durables en
-                                    Afrique, assurer une éducation de
-                                    qualité et des perspectives
-                                    professionnelles aux jeunes. Faire du
-                                    Burkina Faso un modèle de prospérité,
-                                    de paix et de respect des droits,
-                                    promouvant l'unité et la diversité
-                                    nationale.
+                                    Créer des opportunités durables en Afrique, garantir une éducation de qualité, 
+                                    offrir des perspectives aux jeunes et faire du Burkina Faso un modèle de paix, 
+                                    de prospérité et de respect des droits.
                                 </p>
+                                <button class="btn-more" onclick="openModal('mission')">En savoir plus</button>
 
                             </div>
                         </div>
@@ -138,6 +131,15 @@
                 </div>
             </div>
         </section>
+        <!-- fentre modal -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="modal-title">Titre</h2>
+                <p id="modal-body">Contenu détaillé ici...</p>
+            </div>
+        </div>
+        
 
         <div class="disco" id="disco">
             <div class="contenu">
