@@ -122,6 +122,11 @@ header .nav li:last-child {
     flex-direction: column;
     align-items: center;
     padding: 110px 100px;
+    position: relative;
+    justify-content: center;
+    min-height: 100vh;
+    color: #fff;
+    text-align: center;
 }
 
 @media (max-width: 1000px) {
@@ -136,14 +141,6 @@ header .nav li:last-child {
     }
 }
 
-
-.box {
-    position: relative;
-    justify-content: center;
-    min-height: 100vh;
-    color: #fff;
-    text-align: center;
-}
 
 .box video {
     position: absolute;
@@ -168,6 +165,9 @@ header .nav li:last-child {
 }
 
 .box a.boxBtn {
+    position: relative; /* Positionnement relatif pour éviter le chevauchement */
+    z-index: 1; /* Place le bouton au-dessus de la vidéo */
+    margin-top: 20px; /* Ajout d'un espacement sous le bouton */
     padding: 15px 35px;
     background: transparent;
     border-radius: 50px;
@@ -197,7 +197,7 @@ header .nav li:last-child {
     }
 
     .box a.boxBtn {
-        padding: 15px 40px;
+        padding: 15px 30px; /* Réduction du padding pour petits écrans */
     }
 }
 
