@@ -39,7 +39,10 @@ header a {
     color: inherit;
     cursor: pointer;
 }
-
+.head.scrolled {
+    background-color: #111;
+    /* Couleur de fond rouge lorsque l'utilisateur fait défiler */
+}
 header h2 {
     text-transform: uppercase;
     font-family: sans-serif;
