@@ -128,67 +128,22 @@ document.querySelectorAll('.timeline-contenth .image-container').forEach(contain
   });
 });
 
-//js pour fenetre modal
-// Gestionnaire pour ouvrir la fenêtre modale
-function openModal(cardType) {
-  const modal = document.getElementById('modal');
-  const modalTitle = document.getElementById('modal-title');
-  const modalBody = document.getElementById('modal-body');
+//pour le menu burger
 
-  // Mettez les informations spécifiques ici
-  const cardInfo = {
-      valeurs: {
-          title: 'VALEURS',
-          content: 'Le vivre-ensemble, la solidarité, le partage, la paix. Voici une description plus détaillée.'
-      },
-      vision: {
-          title: 'VISION',
-          content: 'Unité, Intégrité, Don de soi. Voici une description plus détaillée.'
-      },
-      objectifs: {
-          title: 'OBJECTIFS',
-          content: 'Construire des écoles, soutenir les start-ups, etc. Voici une description plus détaillée.'
-      },
-      project: {
-          title: 'PROJECT',
-          content: 'Créer un espace de formation en développement personnel, etc.'
-      },
-      action: {
-          title: 'ACTION',
-          content: 'Fourniture de dialyseurs à l’hôpital Sourou Sanou, etc.'
-      },
-      mission: {
-          title: 'MISSION',
-          content: 'Créer des opportunités durables en Afrique, etc.'
-      }
-  };
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.querySelector('.hamburger');
+  const nav = document.querySelector('.nav');
 
-  // Mettez à jour les informations dans la modale
-  modalTitle.textContent = cardInfo[cardType].title;
-  modalBody.textContent = cardInfo[cardType].content;
-
-  // Affichez la modale
-  modal.style.display = 'flex';
-}
-
-// Gestionnaire pour fermer la fenêtre modale
-function closeModal() {
-  const modal = document.getElementById('modal');
-  modal.style.display = 'none';
-}
-
-// Fermer la modale en cliquant sur l'overlay
-window.addEventListener('click', (event) => {
-  const modal = document.getElementById('modal');
-  if (event.target === modal) {
-      closeModal();
-  }
+  hamburger.addEventListener('click', function () {
+      nav.classList.toggle('active');
+  });
 });
 
-// Fermer la modale en appuyant sur Échap
-window.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') {
-      closeModal();
+document.addEventListener('click', function (e) {
+  const nav = document.querySelector('.nav');
+  const hamburger = document.querySelector('.hamburger');
+  if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+      nav.classList.remove('active');
   }
 });
 

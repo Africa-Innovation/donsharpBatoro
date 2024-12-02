@@ -12,14 +12,9 @@ body {
 
 ul {
     list-style: none;
-    font-family:sans-serif;
+    font-family: sans-serif;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-}
 
 
 header {
@@ -30,45 +25,40 @@ header {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; /* Aligne tous les enfants verticalement au centre */
     color: #fff;
     padding: 5px 100px 0;
     height: 90px;
-    /* background-color: #202020; */
-
-}
-
-.head {
-    transition: background-color 0.3s;
-    /* Animation de transition */
-}
-
-.head.scrolled {
-    background-color: #111;
-    /* Couleur de fond rouge lorsque l'utilisateur fait défiler */
+    transition: background-color 0.3s; /* Animation de transition */
 }
 
 header a {
     text-transform: capitalize;
     font-weight: 900;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
 header h2 {
     text-transform: uppercase;
-    font-family:sans-serif;
+    font-family: sans-serif;
 }
 
 header .nav {
     display: flex;
+    flex-direction: row;
+    margin-left: auto; /* Pousse les liens de navigation vers la droite */
+    transition: all 0.3s ease-in-out;
 }
-
 
 header .nav li {
     margin: 0 15px;
+    
 }
 
 header .nav li:hover {
-    color:  #eaa023;
+    color: #eaa023;
 }
 
 header .nav li:first-child {
@@ -79,25 +69,48 @@ header .nav li:last-child {
     margin-right: 0;
 }
 
-@media (max-width: 1000px) {
-    header {
-        padding: 20px 50px;
-    }
+/* Styles pour le menu hamburger */
+.hamburger {
+    display: none; /* Caché par défaut */
+    font-size: 1.8rem;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 20px; /* Espace entre le menu et le hamburger */
 }
 
-@media (max-width: 700px) {
+/* Media queries pour les petits écrans */
+@media (max-width: 768px) {
     header {
-        flex-direction: column;
+        flex-direction: row;
+        padding: 10px 20px;
     }
 
-    header h2 {
-        margin-bottom: 15px;
+    header .nav {
+        display: none; /* Masquer les liens par défaut */
+        flex-direction: column;
+        position: absolute;
+        top: 90px;
+        right: 10px;
+        background: #111; /* Fond du menu */
+        width: 200px;
+        padding: 10px;
+        border-radius: 10px;
+        z-index: 20;
+    }
+
+    header .nav.active {
+        display: flex; /* Afficher les liens lorsqu'on clique sur le menu */
     }
 
     header .nav li {
-        margin: 0 7px;
+        margin: 10px 0; /* Espacement vertical entre les liens */
+    }
+
+    .hamburger {
+        display: block; /* Afficher le menu hamburger */
     }
 }
+
 
 
 .box {
@@ -195,6 +208,7 @@ header .nav li:last-child {
     font-family:sans-serif;
     color: #fff;
     font-size: 3rem;
+    
 
 }
 
@@ -203,8 +217,9 @@ header .nav li:last-child {
     width: auto;
     text-align: start;                  
     padding-top: 25px;
-    font-size: 20px;
+    /* font-size: 20px; */
     font-family:sans-serif;
+    text-align: justify
 }
 
 .hidden-content{
@@ -212,7 +227,8 @@ header .nav li:last-child {
     width: auto;
     text-align: start;
     font-family:sans-serif;
-    font-size: 20px;
+    /* font-size: 20px; */
+    text-align: justify
 }
 .more {
     padding-top: 15px;
@@ -265,9 +281,6 @@ header .nav li:last-child {
     width: 350px;
     background-color: rgba(255, 255, 255, 0.05);
     padding: 3% 8%;
-    display: flex;
-    flex-direction: column; /* Alignement vertical */
-    justify-content: space-between; /* Espacer les éléments */
 
 }
 
@@ -295,59 +308,75 @@ header .nav li:last-child {
     width: 100%;
     margin: 20px 0;
     font-family:sans-serif;
-    flex-grow: 1; /* Permet au paragraphe de prendre l'espace disponible */
+    text-align: justify
 }
 
 /* responsive de cards */
 
+/* Styles responsives améliorés */
 @media (max-width:1200px) {
     .cards {
         grid-template-columns: repeat(2, 1fr);
 
     }
 }
-
-@media (max-width:900px) {
+/* Pour les écrans de 768px à 900px */
+@media (max-width: 900px) {
     .cards {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: 1fr; /* Une seule carte par ligne */
+        gap: 30px; /* Plus d'espacement entre les cartes */
     }
-
-    .card h2 {
-        font-size: 2.5rem;
+    .card {
+        height: 300px; /* Réduction de la hauteur */
     }
-
-}
-
-@media (max-width:768px) {
     .card h2 {
- font-size: 2rem;
+        font-size: 1.8rem; /* Taille du titre légèrement réduite */
     }
-
-    .card h2 {
- width: 90%;
-
+    .card p {
+        font-size: 0.9rem; /* Réduction de la taille du texte */
     }
 }
 
-@media (max-width:500px){
-    .card{
-    height: 380px; /* cetait a 330PX */
-    width: 320px;
+/* Pour les écrans de moins de 768px */
+@media (max-width: 768px) {
+    .cards {
+        gap: 20px; /* Espacement réduit */
     }
-    
-    .card i{
-    margin-top: 20px;
+    .card {
+        height: 280px; /* Hauteur encore réduite */
+        width: 100%; /* Les cartes occupent toute la largeur disponible */
     }
-    .card h2{
-
-        margin-bottom: 12px;
-        font-size: 1.5rem;
+    .card i {
+        font-size: 2rem; /* Réduction de la taille des icônes */
     }
-        
-    .card h2{
-            width: 100%;
-        }
+    .card p {
+        font-size: 0.85rem; /* Texte légèrement réduit */
+    }
 }
+
+/* Pour les écrans de moins de 500px */
+@media (max-width: 500px) {
+    .cards {
+        gap: 15px; /* Espacement réduit pour compenser la largeur limitée */
+    }
+    .card {
+        height: auto; /* Les cartes s'ajustent automatiquement à leur contenu */
+        padding: 10px; /* Réduction du padding */
+        width: 90%; /* Les cartes occupent 90% de la largeur de l'écran */
+        margin: 0 auto; /* Centrage des cartes */
+    }
+    .card i {
+        font-size: 1.8rem; /* Taille des icônes réduite davantage */
+        margin-top: 10px;
+    }
+    .card h2 {
+        font-size: 1.3rem; /* Taille du titre ajustée */
+    }
+    .card p {
+        font-size: 0.8rem; /* Texte plus petit */
+    }
+}
+
 
 /* sectoin disco */
 
@@ -360,12 +389,22 @@ header .nav li:last-child {
 }
 
 .contenu h1 {
-    font-size: 24px;
+    /* font-size: 24px; */
     margin: 0 20px;
     color: #fff;
     font-size: 3rem;
     font-family:sans-serif;
 }
+
+@media (max-width:500px ){
+    .contenu h1 {
+         
+        font-size: 2rem;
+        
+    }
+}
+
+
 
 .left-line,
 .right-line {
@@ -377,27 +416,7 @@ header .nav li:last-child {
 /* timeline disco */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-.contenu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 30px;
-}
 
-.contenu h1 {
-    font-size: 24px;
-    margin: 0 20px;
-    color: #fff;
-    font-size: 3rem;
-    font-family: sans-serif;
-}
-
-.left-line,
-.right-line {
-    width: 50px;
-    height: 2px;
-    background-color: #fff;
-}
 
 /* timeline disco */
 .timeline-section {
@@ -538,10 +557,7 @@ header .nav li:last-child {
 	margin: 0 auto;
 	padding: 100px 0;
 }
-/* #projects .projects-header h1 {
-	margin-bottom: 50px;
-    color: red;
-} */
+
 #projects .all-projects {
     margin-top: 70px;
 	display: flex;
@@ -571,12 +587,12 @@ header .nav li:last-child {
 	color: white;
 }
 #projects .project-info h1 {
-	font-size: 4rem;
+	font-size: 2.5rem;
 	font-weight: 500;
     font-family: sans-serif;
 }
 #projects .project-info h2 {
-	font-size: 1.8rem;
+	/* font-size: 1.8rem; */
 	font-weight: 500;
 	margin-top: 10px;
     font-family: sans-serif;
@@ -584,6 +600,7 @@ header .nav li:last-child {
 #projects .project-info p {
 	color: white;
     font-family: sans-serif;
+    text-align: justify
 }
 #projects .project-img {
 	flex-basis: 50%;
@@ -636,61 +653,67 @@ header .nav li:last-child {
 
 }
 
+@media (max-width: 768px) {
+    /* Gestion de la disposition */
+    #projects .project-item {
+        flex-direction: column; /* Les éléments seront empilés verticalement */
+        margin: 20px auto;
+    }
 
+    #projects .project-img {
+        height: auto; /* Ajuste automatiquement la hauteur selon la largeur */
+        width: 100%; /* L'image prendra toute la largeur disponible */
+    }
 
-/* section festivite */
+    #projects .project-img img {
+        object-fit: cover; /* Les images restent proportionnelles */
+        width: 100%;
+        height: auto;
+    }
 
-/* .festi {
-    margin-top: 70px;
+    #projects .project-info h1 {
+        font-size: 1.5rem; /* Réduit la taille des titres */
+    }
+
+   /* #projects .project-info h2 {
+        font-size: 1.2rem;  Réduit la taille des sous-titres 
+    }*/
+
+    #projects .project-info p {
+        font-size: 1rem; /* Réduit la taille des paragraphes pour une meilleure lisibilité */
+    }
+}
+@media (max-width: 500px) {
+    #projects .project-item {
+        margin: 15px auto;
+    }
+
+    #projects .project-info {
+        padding: 20px; /* Réduit le padding pour plus d'espace */
+    }
+
+    #projects .project-info h1 {
+        font-size: 1rem;
+    }
+
+    /* #projects .project-info h2 {
+        font-size: 1rem;
+    } */
+
+    #projects .project-img img {
+        height: auto; /* Permet à l'image de s'adapter à la largeur */
+        max-height: 200px; /* Limite la hauteur des images */
+    }
 }
 
-.festi h1 {
-    color: #fff;
-    font-size: 3rem;
-}
-
-.festi .content {
-    color: rgba(255, 255, 255, 0.6);
-    width: auto;
-    text-align: start;
-    padding-top: 25px;
-    font-size: 20px;
-}
-
-.festi {
-    padding-top: 15px;
-    color: #eaa023;
-} */
 
 
-/* playlist video */
-
-/* Video section */
+/* video playlist */
 
 .video {
     margin-top: 70px;
 }
 
-.video .contenu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 30px;
-}
-
-.video .left-line,
-.video .right-line {
-    width: 50px;
-    height: 2px;
-    background-color: #fff;
-}
-
-.video h1 {
-    color: #fff;
-    font-size: 3rem;
-    margin: 0 20px;
-    font-family:sans-serif;
-}
 
 .video .container {
     display: flex;
@@ -1010,54 +1033,4 @@ footer {
     color: #fff;
   }
 
-  /* css pour fenetre modal */
-  .modal {
-    display: none; /* Masquée par défaut */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Overlay semi-transparent */
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    position: relative; /* Pour bien positionner le bouton "×" */
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 600px;
-    text-align: center;
-}
-
-.modal .close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #333;
-}
-
-.btn-more {
-    /*background-color: #eaa023;
-    color: #fff;*/
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    align-self: flex-start; /* Place le bouton en bas à droite */
-    margin-top: auto; /* Assure que le bouton reste en bas */
-    transition: background-color 0.3s ease;
-}
-
-.btn-more:hover {
-    background-color: #d68d1c; /* Couleur plus foncée au survol */
-}
   
