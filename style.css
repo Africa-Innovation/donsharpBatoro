@@ -356,15 +356,8 @@ header .nav li:last-child {
 
 /* Pour les écrans de moins de 500px */
 @media (max-width: 500px) {
-    .cards {
-        gap: 15px; /* Espacement réduit pour compenser la largeur limitée */
-    }
-    .card {
-        height: auto; /* Les cartes s'ajustent automatiquement à leur contenu */
-        padding: 10px; /* Réduction du padding */
-        width: 100%; /* Les cartes occupent 90% de la largeur de l'écran */
-        margin: 0 auto; /* Centrage des cartes */
-    }
+    
+    
     .card i {
         font-size: 1.8rem; /* Taille des icônes réduite davantage */
         margin-top: 10px;
