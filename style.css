@@ -362,7 +362,7 @@ header .nav li:last-child {
     .card {
         height: auto; /* Les cartes s'ajustent automatiquement à leur contenu */
         padding: 10px; /* Réduction du padding */
-        width: 90%; /* Les cartes occupent 90% de la largeur de l'écran */
+        width: 100%; /* Les cartes occupent 90% de la largeur de l'écran */
         margin: 0 auto; /* Centrage des cartes */
     }
     .card i {
@@ -587,12 +587,12 @@ header .nav li:last-child {
 	color: white;
 }
 #projects .project-info h1 {
-	font-size: 2.5rem;
+	font-size: 4rem;
 	font-weight: 500;
     font-family: sans-serif;
 }
 #projects .project-info h2 {
-	/* font-size: 1.8rem; */
+	font-size: 1.8rem;
 	font-weight: 500;
 	margin-top: 10px;
     font-family: sans-serif;
@@ -672,12 +672,12 @@ header .nav li:last-child {
     }
 
     #projects .project-info h1 {
-        font-size: 1.5rem; /* Réduit la taille des titres */
+        font-size: 2rem; /* Réduit la taille des titres */
     }
 
-   /* #projects .project-info h2 {
-        font-size: 1.2rem;  Réduit la taille des sous-titres 
-    }*/
+    #projects .project-info h2 {
+        font-size: 1.2rem; /* Réduit la taille des sous-titres */
+    }
 
     #projects .project-info p {
         font-size: 1rem; /* Réduit la taille des paragraphes pour une meilleure lisibilité */
@@ -693,12 +693,12 @@ header .nav li:last-child {
     }
 
     #projects .project-info h1 {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
-    /* #projects .project-info h2 {
+    #projects .project-info h2 {
         font-size: 1rem;
-    } */
+    }
 
     #projects .project-img img {
         height: auto; /* Permet à l'image de s'adapter à la largeur */
