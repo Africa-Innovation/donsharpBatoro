@@ -147,11 +147,4 @@ document.addEventListener('click', function (e) {
   }
 });
 
-const video = document.getElementById("myVideo");
-
-    // Activer le son au clic
-    video.addEventListener("click", () => {
-        if (video.muted) {
-            video.muted = false; // Désactive le mode muet
-        }
-    });
+//pour la video beginning
