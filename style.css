@@ -312,8 +312,6 @@ header .nav li:last-child {
 }
 
 /* responsive de cards */
-
-/* Styles responsives améliorés */
 @media (max-width:1200px) {
     .cards {
         grid-template-columns: repeat(2, 1fr);
@@ -321,22 +319,48 @@ header .nav li:last-child {
     }
 }
 
+@media (max-width:900px) {
+    
 
-/* Pour les écrans de moins de 768px */
-@media (max-width: 768px) {
-     
+    .card h2 {
+        font-size: 2.5rem;
+    }
+
+}
+
+@media (max-width:768px) {
     .cards {
-        gap: 20px; /* Espacement réduit */
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(1, 1fr);
     }
-    .card {
-        height: auto; /* Hauteur encore réduite */
-        width: 100%; /* Les cartes occupent toute la largeur disponible */
+    .card h2 {
+ font-size: 2rem;
     }
-    .card i {
-        font-size: 2rem; /* Réduction de la taille des icônes */
+
+    .card h2 {
+ width: 90%;
+
     }
-     
+}
+
+@media (max-width:500px){
+    
+    .card{
+    height: 380px; /* cetait a 330PX */
+    width: 320px;
+    }
+    
+    .card i{
+    margin-top: 20px;
+    }
+    .card h2{
+
+        margin-bottom: 12px;
+        font-size: 1.5rem;
+    }
+        
+    .card h2{
+            width: 100%;
+        }
 }
 
  
