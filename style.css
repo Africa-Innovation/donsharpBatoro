@@ -330,7 +330,7 @@ header .nav li:last-child {
         grid-template-columns: 1fr;
     }
     .card {
-        height: 280px; /* Hauteur encore réduite */
+        height: auto; /* Hauteur encore réduite */
         width: 100%; /* Les cartes occupent toute la largeur disponible */
     }
     .card i {
@@ -339,22 +339,7 @@ header .nav li:last-child {
      
 }
 
-/* Pour les écrans de moins de 500px */
-@media (max-width: 455px) {
-    .card {
-        height: auto; /* Les cartes s'ajustent automatiquement à leur contenu */
-        padding: 10px; /* Réduction du padding */
-        width: 90%; /* Les cartes occupent 90% de la largeur de l'écran */
-        margin: 0 auto; /* Centrage des cartes */
-    }
-    
-    .card i {
-        font-size: 1.8rem; /* Taille des icônes réduite davantage */
-        margin-top: 10px;
-    }
-    
-    
-}
+ 
 
 
 /* sectoin disco */
