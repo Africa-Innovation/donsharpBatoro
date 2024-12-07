@@ -286,7 +286,7 @@ a.more:hover {
 }
 
 .card i {
-    color: #eaa023;
+    color: #37474f;
     margin-top: 20px;  /* CETAIT A 40PX */
     margin-bottom: 15px;
     font-size: 2.5rem;
@@ -931,7 +931,8 @@ a.more:hover {
 /* Footer section */
 
 footer {
-    background-color: #2A2A2A;
+    /* background-color: #2A2A2A; */
+    background-color: #37474f;
 }
 
 .footerContainer {
