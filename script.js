@@ -15,46 +15,46 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// script pour la playlist
-const videosList = [
-  {
-      video: 'https://www.youtube.com/embed/sB3cF9vvU5o?si=O-4BiI3i3rDbC361',
-      title: 'SOUNDJATA'
-  },
-  {
-      video: 'https://www.youtube.com/embed/H899qgwkhw8?si=IwU67_2IfM8am1sN',
-      title: 'YIDJINDJA'
-  },
-  {
-      video: 'https://www.youtube.com/embed/Hqsu1GI23S4?si=FAm1U2vJ9CB4LsFZ',
-      title: 'LA DETTE'
-  }
-  // Ajoutez les autres vidéos YouTube ici avec leurs titres
-];
+// // script pour la playlist
+// const videosList = [
+//   {
+//       video: 'https://www.youtube.com/embed/sB3cF9vvU5o?si=O-4BiI3i3rDbC361',
+//       title: 'SOUNDJATA'
+//   },
+//   {
+//       video: 'https://www.youtube.com/embed/H899qgwkhw8?si=IwU67_2IfM8am1sN',
+//       title: 'YIDJINDJA'
+//   },
+//   {
+//       video: 'https://www.youtube.com/embed/Hqsu1GI23S4?si=FAm1U2vJ9CB4LsFZ',
+//       title: 'LA DETTE'
+//   }
+//   // Ajoutez les autres vidéos YouTube ici avec leurs titres
+// ];
 
 // On utilise 'new Set' pour supprimer les doublons si nécessaire
-const categories = [...new Set(videosList.map((item) => item.title))];
+// const categories = [...new Set(videosList.map((item) => item.title))];
 
-document.getElementById('videosList').innerHTML = videosList.map((item) => {
-  return (
-      `<div class="list">
-      <iframe width="100" height="100" src="${item.video}" class="list-video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <h3 class="list-title">${item.title}</h3>
-      </div>`
-  );
-}).join('');
+// document.getElementById('videosList').innerHTML = videosList.map((item) => {
+//   return (
+//       `<div class="list">
+//       <iframe width="100" height="100" src="${item.video}" class="list-video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+//       <h3 class="list-title">${item.title}</h3>
+//       </div>`
+//   );
+// }).join('');
 
-let videoList = document.querySelectorAll('.video-list-container .list');
-videoList.forEach(vid => {
-  vid.onclick = () => {
-      videoList.forEach(remove => { remove.classList.remove('active') });
-      vid.classList.add('active');
-      let src = vid.querySelector('.list-video').src;
-      let title = vid.querySelector('.list-title').innerHTML;
-      document.querySelector('.main-video-container iframe').src = src;
-      document.querySelector('.main-vid-title').innerHTML = title;
-  };
-});
+// let videoList = document.querySelectorAll('.video-list-container .list');
+// videoList.forEach(vid => {
+//   vid.onclick = () => {
+//       videoList.forEach(remove => { remove.classList.remove('active') });
+//       vid.classList.add('active');
+//       let src = vid.querySelector('.list-video').src;
+//       let title = vid.querySelector('.list-title').innerHTML;
+//       document.querySelector('.main-video-container iframe').src = src;
+//       document.querySelector('.main-vid-title').innerHTML = title;
+//   };
+// });
 
 
 // script pour le slider

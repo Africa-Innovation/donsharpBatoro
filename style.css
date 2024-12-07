@@ -7,7 +7,7 @@
 
 body {
     font-family: nexa;
-    background-color: #202020;
+     
 }
 
 ul {
@@ -208,44 +208,37 @@ header .nav li:last-child {
     padding: 5% 8%;
 }
 
-.propos h1 {
-    font-family:sans-serif;
-    color: #fff;
-    font-size: 3rem;
-    
+ 
 
-}
-
-.propos .content {
-    color: rgba(255, 255, 255, 0.6);
-    width: auto;
-    text-align: start;                  
-    padding-top: 25px;
-    /* font-size: 20px; */
-    font-family:sans-serif;
-    text-align: justify
-}
-
-.hidden-content{
+/* .hidden-content{
     color: rgba(255, 255, 255, 0.6);
     width: auto;
     text-align: start;
     font-family:sans-serif;
-    /* font-size: 20px; */
+    
     text-align: justify
 }
 .more {
     padding-top: 15px;
     color: #eaa023;
     font-family:sans-serif;
-}
+} */
 
 /* CSS */
 /* CSS */
-.hidden-content.hidden {
+/* .hidden-content.hidden {
     display: none;
+} */
+
+a.more {
+    text-decoration: none; /* Enlève le soulignement */
+    color: white; /* Change la couleur du texte (par exemple, noir) */
+    font-weight: bold; /* Rendre le texte plus gras, optionnel */
 }
 
+a.more:hover {
+    color: #eaa023; /* Change la couleur du lien au survol, optionnel */
+}
 
 
 /* section card de a propos*/
@@ -253,7 +246,7 @@ header .nav li:last-child {
 
 .service-wrapper {
     padding: 5% 8%;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .service {
@@ -267,7 +260,7 @@ header .nav li:last-child {
 
 .cardpropos p {
 
-    color: rgba(255, 255, 255, 0.6);
+     
     width: 60%;
     text-align: center;
 }
@@ -283,7 +276,7 @@ header .nav li:last-child {
 .card {
     height: 350px;   /* cetait a 350PX */
     width: 350px;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: #e0e0e0;
     padding: 3% 8%;
 
 }
@@ -300,7 +293,7 @@ header .nav li:last-child {
 }
 
 .card h2 {
-    color: #fff;
+     
     font-size: 20px;
     /* margin: 10px 0; */
     font-weight: 500;
@@ -367,6 +360,59 @@ header .nav li:last-child {
         }
 }
 
+
+/* section grille  */
+.grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Grande image = 2 parts, colonnes à droite = 1 part */
+    grid-template-rows: 1fr 1fr; /* Deux rangées de hauteur égale */
+    gap: 10px; /* Espacement entre les images */
+    max-width: 1200px;
+    width: 100%; /* Largeur de la grille */
+}
+
+.grid-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajuste l'image sans la déformer */
+    display: block;
+}
+
+/* Grande image à gauche */
+.large {
+    grid-column: 1 / 2; /* Colonne de gauche */
+    grid-row: 1 / 3; /* S'étend sur deux lignes */
+}
+
+/* Première petite image en haut à droite */
+.small:nth-child(2) {
+    grid-column: 2 / 3; /* Colonne de droite */
+    grid-row: 1 / 2; /* Première ligne */
+}
+
+/* Deuxième petite image en bas à droite */
+.small:nth-child(3) {
+    grid-column: 2 / 3; /* Colonne de droite */
+    grid-row: 2 / 3; /* Deuxième ligne */
+}
+
+/* Overlay pour le texte */
+.overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
  
 
 
@@ -990,13 +1036,13 @@ footer {
 /* page_2 a propos */
 
 
-/* image du concert prestige */
+/* image du concert prestige
 
 .gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    justify-items: center; /* Aligner les éléments horizontalement */
+    justify-items: center;   Aligner les éléments horizontalement 
     margin: 20px auto;
   }
   
@@ -1025,4 +1071,4 @@ footer {
     color: #fff;
   }
 
-  
+   */
