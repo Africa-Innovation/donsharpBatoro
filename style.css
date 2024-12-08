@@ -244,6 +244,7 @@ header .nav li:last-child {
 
 .card p{
     color: #555;
+    font-size: 1.1em;
 }
 
 .container {
@@ -447,11 +448,15 @@ footer {
 
 .propos {
     text-align: center;
-    padding: 25px;
+    padding: 55px;
     /* background-color: #f7f7f7; */
     color: #000;
     font-size: 2.5rem;
     
+}
+
+.propos h1{
+    color: white;
 }
 
 .tabs {
@@ -531,6 +536,7 @@ footer {
 
 
 
+/* disco dans la page a propos */
 .discography-timeline {
     display: flex;
     flex-direction: column;
@@ -596,7 +602,7 @@ footer {
 .timeline-content h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
-    color: #000; /* Texte noir pour les dates */
+    color: rgb(236, 238, 241);; /* Texte noir pour les dates */
 }
 
 .timeline-content img {
@@ -661,3 +667,69 @@ footer {
         margin: 10px auto;
     }
 }
+
+
+/* biographie */
+
+.biography-section {
+    max-width: 1000px;
+    margin: 40px auto;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.bio-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.bio-section.alternate-left {
+    flex-direction: row;
+}
+
+.bio-section.alternate-right {
+    flex-direction: row-reverse;
+}
+
+.bio-content {
+    flex: 1;
+    padding: 10px;
+}
+
+.bio-content h3 {
+    font-size: 1.8rem;
+    color: #37474f;
+    margin-bottom: 10px;
+}
+
+.bio-content p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.bio-image {
+    flex: 1;
+    max-width: 300px;
+    width: 100%;
+    
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    .bio-section {
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    .bio-image {
+        max-width: 100%;
+    }
+}
+
+
+
