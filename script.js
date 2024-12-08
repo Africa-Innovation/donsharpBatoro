@@ -35,6 +35,7 @@ document.addEventListener('click', function (e) {
 });
 
 //pour le tabar dans à propos
+
 // Sélectionne tous les boutons et contenus
 const buttons = document.querySelectorAll(".tab-button");
 const contents = document.querySelectorAll(".tab-content");
@@ -61,3 +62,21 @@ buttons.forEach(button => {
 
 // Active le premier onglet par défaut
 activateTab("biographie");
+
+
+//disco
+const timelineItems = document.querySelectorAll('.timeline-item');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1 });
+
+timelineItems.forEach(item => observer.observe(item));
+
+
+
+

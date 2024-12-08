@@ -7,7 +7,7 @@
 
 body {
     font-family: nexa;
-    background-color: #e0e0e0;
+    background-color: #fefeff;
      
 }
 
@@ -441,6 +441,8 @@ footer {
     font-weight: bold;
 }
 
+/* a propos cest le tabbar */
+
 .propos {
     text-align: center;
     padding: 25px;
@@ -452,19 +454,23 @@ footer {
 
 .tabs {
     display: flex;
+    flex-wrap: wrap; /* Les boutons s'adaptent sur plusieurs lignes si nécessaire */
     justify-content: center;
+    gap: 10px; /* Espacement entre les boutons */
     margin: 20px 0;
 }
 
 .tab-button {
     padding: 10px 20px;
-    margin: 0 10px;
+    margin: 0;
     border: 1px solid #000;
     background: #fff;
     cursor: pointer;
     font-size: 1rem;
     color: #000;
     transition: background 0.3s, color 0.3s;
+    flex: 1 1 auto; /* Les boutons s'adaptent en largeur */
+    max-width: 200px; /* Largeur maximale pour chaque bouton */
 }
 
 .tab-button.active {
@@ -476,15 +482,15 @@ footer {
     background: #ddd;
 }
 
-.tab-content {
+/* .tab-content {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
-    display: none; /* Par défaut, masqué */
-}
+    display: none;  
+} */
 
 .tab-content p {
     margin: 0;
@@ -496,3 +502,154 @@ footer {
     display: block; /* Affiche la première section par défaut */
 }
 
+/* Responsivité pour les petits écrans */
+@media (max-width: 768px) {
+    .tab-button {
+        padding: 8px 10px; /* Réduit la taille des boutons */
+        font-size: 0.9rem;
+        max-width: 150px; /* Réduit la largeur maximale des boutons */
+    }
+
+    .tab-content p {
+        font-size: 0.9rem; /* Réduit la taille du texte dans les paragraphes */
+    }
+}
+
+@media (max-width: 480px) {
+    .tab-content {
+        padding: 15px;
+        width: 100%; /* Prend toute la largeur de l'écran sur très petits écrans */
+    }
+
+    .tab-button {
+        padding: 6px 8px; /* Réduit encore la taille des boutons */
+        font-size: 0.8rem;
+    }
+}
+
+
+
+.discography-timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.discography-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: #000; /* Ligne noire centrale */
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    margin: 20px 0;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: #000; /* Cercle noir pour les points */
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-content {
+    width: 40%;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #000; /* Texte noir pour les dates */
+}
+
+.timeline-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 0; /* Pas de coins arrondis */
+    border: none; /* Pas de bordure */
+    box-shadow: none; /* Pas d'ombre */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-left: 20px;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-right: 20px;
+}
+
+.album-container {
+    position: relative;
+}
+
+.album-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.album-container:hover .album-info {
+    opacity: 1;
+}
+
+
+/* Responsivité */
+@media (max-width: 768px) {
+    .timeline-item {
+        flex-direction: column !important;
+    }
+
+    .timeline-content {
+        width: 80%;
+        margin: 10px auto;
+    }
+}
