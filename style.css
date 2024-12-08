@@ -7,7 +7,7 @@
 
 body {
     font-family: nexa;
-    background-color: #fefeff;
+    background-color: #202020;
      
 }
 
@@ -62,7 +62,7 @@ header .nav li {
 }
 
 header .nav li:hover {
-    color: #33232b;
+    color: #5e8ea7;
 }
 
 header .nav li:first-child {
@@ -231,7 +231,9 @@ header .nav li:last-child {
 .cards .card i {
     font-size: 2rem; /* Taille de l'icône */
     margin-bottom: 20px;
-    color: #5e8ea7;
+    /* color: #5e8ea7; */
+    color: rgb(236, 238, 241);
+     
 }
 
 .card h2{
@@ -446,7 +448,7 @@ footer {
 .propos {
     text-align: center;
     padding: 25px;
-    background-color: #f7f7f7;
+    /* background-color: #f7f7f7; */
     color: #000;
     font-size: 2.5rem;
     
