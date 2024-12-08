@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/scrollreveal"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <title>Document</title>
 </head>
+
 <body>
     <header class="head">
-        <h2><a href="#">Donsharp de Batoro</a></h2>
+        <h2><a href="index.html">Donsharp de Batoro</a></h2>
         <ul class="nav">
             <li><a href="#propos">A Propos</a></li>
-            <li><a href="#disco">Discographie</a></li>
-            <li><a href="#video">Vidéo</a></li>
+            <li><a href="#">Partenaires</a></li>
+            <li><a href="#">Vidéo</a></li>
 
             <li><a href="#footer">Contact</a></li>
         </ul>
@@ -30,13 +32,28 @@
     </section>
 
     <section class="propos">
-
-        <h1>A Propos</h1>
-
+        <h1>A PROPOS</h1>
+        <div class="tabs">
+            <button class="tab-button active" data-tab="biographie">Biographie</button>
+            <button class="tab-button" data-tab="prix">Prix et Distinctions</button>
+            <button class="tab-button" data-tab="rene">Discographie</button>
+        </div>
+        <div class="tab-content" id="biographie">
+            <p>Contenu de la biographie : Donsharp de Batoro est un artiste talentueux...</p>
+        </div>
+        <div class="tab-content" id="prix" style="display: none;">
+            <p>Contenu des prix et distinctions : Récompensé pour sa carrière musicale...</p>
+        </div>
+        <div class="tab-content" id="rene" style="display: none;">
+            <p>Contenu de René : Une personnalité influente...</p>
+        </div>
     </section>
     
 
 
+
+
     <script src="script.js"></script>
 </body>
+
 </html>
