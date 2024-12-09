@@ -499,11 +499,16 @@ footer {
     display: none;  
 } */
 
-.tab-content p {
+.tab-content h3{
+    color: #5e8ea7;
+}
+
+/* .tab-content p {
     margin: 0;
     font-size: 1.1rem;
     line-height: 1.5;
-}
+} */
+
 
 .tab-content:first-of-type {
     display: block; /* Affiche la première section par défaut */
@@ -537,6 +542,7 @@ footer {
 
 
 /* disco dans la page a propos */
+
 .discography-timeline {
     display: flex;
     flex-direction: column;
