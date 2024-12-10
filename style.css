@@ -869,4 +869,18 @@ footer {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
 
- 
+.lb-prev, .lb-next {
+    opacity: 1 !important; /* Toujours visibles */
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.lb-prev:hover, .lb-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
