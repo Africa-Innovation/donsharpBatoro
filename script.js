@@ -78,5 +78,7 @@ const observer = new IntersectionObserver((entries) => {
 timelineItems.forEach(item => observer.observe(item));
 
 
+//partenaires
+
 
 
